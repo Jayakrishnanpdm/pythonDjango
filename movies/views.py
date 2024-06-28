@@ -10,10 +10,8 @@ def create(request):
       if frm.is_valid():
           frm.save()
     else:
-        frm=MovieForm()
-              
-      
-    return render(request,'create.html',{'frm':frm})
+        frm=MovieForm()      
+        return render(request,'create.html',{'frm':frm})
 
 
 def list(request):

@@ -21,4 +21,4 @@ class movie_info(models.Model):
     actors=models.ManyToManyField(Actors,related_name='actor')
     def __str__(self):
         return f"{self.title} ({self.pk})"
-
+     
