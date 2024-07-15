@@ -1,8 +1,21 @@
 <h1>Sign up</h1>
 <form method="POST">
+    {% csrf_token %}
     <label>Username</label>
     <input type="text" name="username">
+    <br>
+    <br>
     <label>Password</label>
-    
-
+    <input type="password" name="password">
+    <br>
+    <br>
+    <button type="submit" style="margin-left: 70px;">signup</button>
+    <p>
+        {% if user %}
+        <p>user created sucessfully</p>
+        {% endif %}
+        {% if error_message %}
+        <p style="color: red;">{{ error_message }}</p>
+        {% endif %}
+    </p>
 </form>
