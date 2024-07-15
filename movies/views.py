@@ -1,8 +1,9 @@
 from django.shortcuts import render
 from .models import movie_info
 from . forms import MovieForm
-
+from django.contrib.auth.decorators import login_required
 # Create your views here.
+@login_required(login_url='login/')
 def create(request):
     
     if request.POST:
@@ -13,7 +14,7 @@ def create(request):
         frm=MovieForm()      
         return render(request,'create.html',{'frm':frm})
 
-
+@login_required(login_url='login/')
 def list(request):
     movie_set=movie_info.objects.all()
     return render(request,'list.html',{'movies':movie_set})
