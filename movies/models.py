@@ -4,12 +4,18 @@ from django.db import models
 class Censor_info(models.Model):
     rating=models.CharField(max_length=5)
     certified_by=models.CharField(max_length=20)
-
+    def __str__(self):
+       return f"{self.certified_by} ({self.pk})" 
+    
 class Actors(models.Model):
     name=models.CharField(max_length=20)
-
+    def __str__(self):
+        return f"{self.name} ({self.pk})" 
+    
 class Directors(models.Model):
-    name = models.CharField(max_length=20)   
+    name = models.CharField(max_length=20)
+    def __str__(self):
+        return f"{self.name} ({self.pk})"       
    
 class movie_info(models.Model):
     title = models.CharField(max_length=250)

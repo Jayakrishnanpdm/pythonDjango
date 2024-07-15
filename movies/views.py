@@ -12,7 +12,7 @@ def create(request):
           frm.save()
     else:
         frm=MovieForm()      
-        return render(request,'create.html',{'frm':frm})
+    return render(request,'create.html',{'frm':frm})
 
 @login_required(login_url='login/')
 def list(request):
